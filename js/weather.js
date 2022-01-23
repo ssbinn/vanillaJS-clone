@@ -1,7 +1,7 @@
 // #10 화면에 날씨가져오기
 // weather API - https://openweathermap.org/api - API는 서버에게 요청하는 거잖아
 
-const API_KEY = "95c940d892f7f3ad3b7335af0b0d4c19";
+const API_KEY = "";
 
 function onGeoSucces(position) { // succes함수 - GeolocationPosition object 하나를 입력 파라미터로 받음 -JS가 제공한다는 얘기
     // console.log(position);
