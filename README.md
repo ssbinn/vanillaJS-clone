@@ -1,2 +1,2 @@
-## vanillaJS clonecoding base
+## VanillaJS Clone Coding 
 Productivity App Clone Coding
