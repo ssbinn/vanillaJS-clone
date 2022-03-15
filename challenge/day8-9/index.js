@@ -1,35 +1,32 @@
 // 2022.03.15
-const maxInput = document.querySelector("#max-form input");
-const userInput = document.querySelector("#user-form input");
-const btn = document.querySelector("#user-form button");
+
+const maxNum = document.querySelector("#max-number input");
+const userNum = document.querySelector("#user-number input");
+const playBnt = document.querySelector("#user-number button");
 
 const result = document.querySelector("#result");
-const win = document.querySelector("#win");
-const lose = document.querySelector("#lose");
+const choose = document.querySelector("#result #choose");
+const winOrLose = document.querySelector("#result #win-lose");
 
-const HIDDEN_CLASSNAME = "hidden";
+const getRandomNum = localStorage.getItem("randomN");
+const getUserNum = localStorage.getItem("userN");
 
 function handleSubmit(event) {
-  const maxNum = maxInput.value; //40
-  const userNum = userInput.value; //17
-  const machineNum = Math.floor(Math.random() * maxNum + 1); // 0 <= machineNum <= maxNum (if maxNum=40, 39 + 1)
-
   event.preventDefault();
 
-  if (machineNum === userNum) {
-    win.classList.remove(HIDDEN_CLASSNAME);
-    lose.classList.add(HIDDEN_CLASSNAME);
-    paintResult(userNum, machineNum);
+  const machineNum = Math.floor(Math.random() * maxNum.value) + 1; // 0 <= machineNum <= maxNum (if maxNum=40, 39 + 1)
+  localStorage.setItem("randomN", machineNum);
+  localStorage.setItem("userN", userNum.value);
+
+  if (getRandomNum != null && getUserNum != null) {
+    result.classList.remove("hidden");
+  }
+  choose.innerText = `You chose: ${userNum.value}, the machine chose: ${machineNum}.`;
+  if (machineNum === userNum.value) {
+    winOrLose.innerText = "You won!";
   } else {
-    win.classList.add(HIDDEN_CLASSNAME);
-    lose.classList.remove(HIDDEN_CLASSNAME);
-    paintResult(userNum, machineNum);
+    winOrLose.innerText = "You lost!";
   }
 }
 
-function paintResult(userNum, machineNum) {
-  result.innerText = `You chose: ${userNum}, the machine chose: ${machineNum}.`;
-  result.classList.remove(HIDDEN_CLASSNAME);
-}
-
-btn.addEventListener("submit", handleSubmit);
+playBnt.addEventListener("submit", handleSubmit);
