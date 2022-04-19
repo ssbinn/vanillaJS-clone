@@ -5,53 +5,29 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="src/style.css" />
   </head>
+
   <body>
     <h1>Random Number Game</h1>
-    <form id="input-form">
+
+    <!-- enter 누를 시 submit 방지하기 위함 -->
+    <form name="frm" id="input-form" onsubmit="return false;">
       <div id="max-number">
-        <h3>Generate a number between 0 and</h3>
+        <h3 style="display: inline;">Generate a number between 0 and</h3>
         <input type="number" min="0" />
       </div>
-      <div id="user-number">
+      <br />
+      <div id="guess-number">
         Guess the number:
         <input type="number" min="0" />
-        <button>Play!</button>
+        <button type="button">Play!</button>
       </div>
     </form>
-    <div class="hidden" id="result">
-      <p id="choose"></p>
-      <p id="win-lose"></p>
+
+    <div class="hidden" id="answer">
+      <span id="choose"></span>
+      <br />
+      <span id="win-lose"></span>
     </div>
-    <script src="src/index.js"></script>
-  </body>
-</html>
-<!-- ----------------------------------------------------------------- -->
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Vanilla Challenge</title>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-
-  <body>
-    <h1>Random Number Game</h1>
-    <h2>
-      Generate a number between 0 and
-      <input required id="given-num" type="number" min="0" />
-    </h2>
-    <form id="play-form">
-      <h3>
-        Guess the Number <input required type="number" min="0" />
-        <button>Play!</button>
-      </h3>
-    </form>
-
-    <div class="hidden">
-      <h3>Game progress</h3>
-      <h3>Game result</h3>
-    </div>
-
     <script src="src/index.js"></script>
   </body>
 </html>
