@@ -2,23 +2,17 @@
   display: none;
 }
 
-.hidden h3:last-child {
+input {
+  border: 2px solid DarkGray;
+  border-radius: 2px;
+}
+
+button {
   font-weight: bold;
+  border: 2px solid DarkGray;
+  border-radius: 4px;
 }
 
-h1 {
-  font-weight: bold;
-}
-
-h2 {
-  font-weight: bold;
-}
-
-h3 {
-  margin: 0;
-  font-weight: normal;
-}
-
-div h3:last-child {
+div span:last-child {
   font-weight: bold;
 }
