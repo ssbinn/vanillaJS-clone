@@ -1,4 +1,4 @@
-// maxNum.value, userNum.value가 중복되니 변수로 만들어 관리
+// maxNum.value, userNum.value가 너무 중복되는 거 같아
 // 하나의 이벤트 핸들러 함수 안에 예외처리 if문을 두는 것 vs 모두 함수로 분리시켜 call 하는 것 중 좋은 코드는 뭘까 
   
   
